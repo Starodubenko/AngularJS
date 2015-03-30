@@ -17,8 +17,6 @@ public class ContextListener implements ServletContextListener{
     }
 
     public void contextDestroyed(ServletContextEvent sce) {
-        ServletContext servletContext = sce.getServletContext();
-        DaoFactory dbManager = (DaoFactory) servletContext.getAttribute("daoFactory");
-        dbManager.destroy();
+
     }
 }

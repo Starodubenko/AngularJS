@@ -10,8 +10,8 @@ public interface Dao<T extends BaseEntity>{
     void update(T entity);
     void delete(T entity);
 
-    T getById(int id);
-    List<T> getAll();
+    T findById(int id);
+    List<T> findAll();
 
     void setSessionFactory(SessionFactory sessionFactory);
 }
