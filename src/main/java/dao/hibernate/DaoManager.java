@@ -24,4 +24,8 @@ public class DaoManager {
         }
         return dao;
     }
+
+    public static Map<String, Dao> getDaosMap() {
+        return daosMap;
+    }
 }

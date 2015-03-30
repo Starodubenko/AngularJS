@@ -12,6 +12,7 @@ public class Ship extends BaseEntity {
     private Port port = new Port();
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
     private User owner = new User();
 
     public User getOwner() {

@@ -12,12 +12,19 @@ public abstract class AbstractDao<T extends BaseEntity> {
 
     protected SessionFactory sessionFactory;
 
-    public AbstractDao(SessionFactory sessionFactory) {
+    protected AbstractDao() {
+    }
+
+    protected AbstractDao(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
     public void setSessionFactory(SessionFactory sessionFactory){
         this.sessionFactory = sessionFactory;
+    }
+
+    public SessionFactory getSessionFactory() {
+        return sessionFactory;
     }
 
     public void insert(T entity) {
