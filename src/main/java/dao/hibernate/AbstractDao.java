@@ -2,13 +2,19 @@ package dao.hibernate;
 
 import dao.DaoException;
 import entity.BaseEntity;
+import entity.Car;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class AbstractDao<T extends BaseEntity> {
+
+    @Inject
+    private EntityManager em;
 
     protected SessionFactory sessionFactory;
 

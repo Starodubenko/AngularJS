@@ -5,21 +5,22 @@ import javax.persistence.*;
 @Entity
 public class Car extends BaseEntity {
 
-    @Column
+    @Column(nullable = true)
     private String brand;
-    @Column
+    @Column(nullable = true)
     private String model;
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "container_id")
-    private Container container = new Container();
+//    @Transient
+//    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+//    @JoinColumn(name = "container_id")
+//    private Container container = new Container();
 
-    public Container getContainer() {
-        return container;
-    }
-
-    public void setContainer(Container container) {
-        this.container = container;
-    }
+//    public Container getContainer() {
+//        return container;
+//    }
+//
+//    public void setContainer(Container container) {
+//        this.container = container;
+//    }
 
     public String getBrand() {
         return brand;

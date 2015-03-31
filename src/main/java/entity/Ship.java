@@ -2,15 +2,15 @@ package entity;
 
 import javax.persistence.*;
 
-@Entity
+
 public class Ship extends BaseEntity {
 
     @Column
     private int totalWeightHold;
-
+    @Transient
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Port port = new Port();
-
+    @Transient
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User owner = new User();

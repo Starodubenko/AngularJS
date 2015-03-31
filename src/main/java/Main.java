@@ -19,7 +19,7 @@ public class Main {
 
         car.setBrand("Mersedes-Bens");
         car.setModel("S550");
-        car.setContainer(container);
+//        car.setContainer(container);
 
 
 
