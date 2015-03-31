@@ -4,14 +4,14 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Entity
 public class Container extends BaseEntity {
 
     @Column
     private int number;
     @Column
     private int totalWeight;
-    @Transient
+
     @OneToMany(mappedBy = "container", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Car> cars = new ArrayList<Car>();
 

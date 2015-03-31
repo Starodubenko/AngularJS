@@ -12,6 +12,4 @@ public interface Dao<T extends BaseEntity>{
 
     T findById(int id);
     List<T> findAll();
-
-    void setSessionFactory(SessionFactory sessionFactory);
 }

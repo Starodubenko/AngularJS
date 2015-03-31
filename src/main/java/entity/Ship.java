@@ -2,25 +2,26 @@ package entity;
 
 import javax.persistence.*;
 
-
+@Entity
 public class Ship extends BaseEntity {
 
     @Column
     private int totalWeightHold;
-    @Transient
+
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "port_id")
     private Port port = new Port();
-    @Transient
+
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
-    private User owner = new User();
+    private User user = new User();
 
     public User getOwner() {
-        return owner;
+        return user;
     }
 
-    public void setOwner(User owner) {
-        this.owner = owner;
+    public void setOwner(User user) {
+        this.user = user;
     }
 
     public Port getPort() {

@@ -9,18 +9,18 @@ public class Car extends BaseEntity {
     private String brand;
     @Column(nullable = true)
     private String model;
-//    @Transient
-//    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-//    @JoinColumn(name = "container_id")
-//    private Container container = new Container();
 
-//    public Container getContainer() {
-//        return container;
-//    }
-//
-//    public void setContainer(Container container) {
-//        this.container = container;
-//    }
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "container_id")
+    private Container container = new Container();
+
+    public Container getContainer() {
+        return container;
+    }
+
+    public void setContainer(Container container) {
+        this.container = container;
+    }
 
     public String getBrand() {
         return brand;

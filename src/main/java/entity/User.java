@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Entity
 public class User extends BaseEntity {
 
     @Column
@@ -16,7 +16,7 @@ public class User extends BaseEntity {
     @Column
     private String password;
 
-    @Transient
+
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Ship> ships = new ArrayList<Ship>();
 
