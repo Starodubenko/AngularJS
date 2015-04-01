@@ -1,27 +1,22 @@
 var app = angular.module("mainModule", []);
 
-app.controller("containerCtrl", function ($http) {
-    this.name = "";
-    this.description = "";
-    this.photos = ["Photo_1", "Photo_2"];
+app.controller("containerCtrl", function ($scope,$http) {
+    $scope.name = "";
+    $scope.description = "";
+    $scope.photos = ["Photo_1", "Photo_2"];
+    $scope.query = "";
 
-    this.cars = [{
-        name: "Bugatti",
-        image: "image/car_1.jpg"
-    }];
-
-    var carss;
     $http.get("cars.json").success(function(data){
-       carss = data;
+        $scope.cars = data;
     });
 
-    this.addPhoto = function () {
-        this.photos.push(this.newPhoto);
-        this.newPhoto = "";
+    $scope.addPhoto = function () {
+        $scope.photos.push($scope.newPhoto);
+        $scope.newPhoto = "";
     };
 
-    this.removePhoto = function (name) {
-        var i = this.photos.indexOf(name);
-        this.photos.splice(i,1);
+    $scope.removePhoto = function (name) {
+        var i = $scope.photos.indexOf(name);
+        $scope.photos.splice(i,1);
     };
 });

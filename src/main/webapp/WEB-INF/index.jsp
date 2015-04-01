@@ -25,20 +25,21 @@
     <!-- Tab panes -->
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="home">
-            <input type="text" ng-model="container.name">
-            Container name: {{container.name}}
+            <input type="text" ng-model="name">
+            Container name: {{name}}
             <br/>
-            <textarea ng-model="container.description"></textarea>
-            Load description: {{container.description}}
+            <textarea ng-model="description"></textarea>
+            Load description: {{description}}
             <br/>
-            <input type="text" ng-model="container.newPhoto">
-            <button ng-click="container.addPhoto()">Add</button>
-            <ul ng-repeat="photo in container.photos">
-                <li>Photo: {{photo}}<a href="" ng-click="container.removePhoto(photo)">{{photo}}</a></li>
+            <input type="text" ng-model="newPhoto">
+            <button ng-click="addPhoto()">Add</button>
+            <ul ng-repeat="photo in photos">
+                <li>Photo: {{photo}}<a href="" ng-click="removePhoto(photo)">{{photo}}</a></li>
             </ul>
 
             <span>Images</span>
-            <div ng-repeat="car in container.carss">
+            Search: <input type="text" ng-model="query">
+            <div ng-repeat="car in cars | filter:query">
                 <span>{{car.name}}</span>
                 <img ng-src="{{car.image}}"/>
             </div>
