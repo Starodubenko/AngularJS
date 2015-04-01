@@ -36,6 +36,12 @@
             <ul ng-repeat="photo in container.photos">
                 <li>Photo: {{photo}}<a href="" ng-click="container.removePhoto(photo)">{{photo}}</a></li>
             </ul>
+
+            <span>Images</span>
+            <div ng-repeat="car in container.carss">
+                <span>{{car.name}}</span>
+                <img ng-src="{{car.image}}"/>
+            </div>
         </div>
         <div role="tabpanel" class="tab-pane" id="profile">Profile</div>
         <div role="tabpanel" class="tab-pane" id="messages">Message</div>
