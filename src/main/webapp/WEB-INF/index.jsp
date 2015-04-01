@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
+<html ng-app="mainModule">
 <head>
     <link type="text/css" rel="stylesheet" href="<c:url value="webjars/bootstrap/3.0.0/css/bootstrap.min.css"/>"/>
 </head>
@@ -12,7 +12,7 @@
     <input type="submit" value="AddSomeValuesInDataBase"/>
 </form>
 
-<div role="tabpanel">
+<div role="tabpanel" ng-controller="containerCtrl as container">
 
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
@@ -24,12 +24,25 @@
 
     <!-- Tab panes -->
     <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="home">Home</div>
+        <div role="tabpanel" class="tab-pane active" id="home">
+            <input type="text" ng-model="container.name">
+            Container name: {{container.name}}
+            <br/>
+            <textarea ng-model="container.description"></textarea>
+            Load description: {{container.description}}
+            <br/>
+            <input type="text" ng-model="container.newPhoto">
+            <button ng-click="container.addPhoto()">Add</button>
+            <ul ng-repeat="photo in container.photos">
+                <li>Photo: {{photo}}<a href="" ng-click="container.removePhoto(photo)">{{photo}}</a></li>
+            </ul>
+        </div>
         <div role="tabpanel" class="tab-pane" id="profile">Profile</div>
         <div role="tabpanel" class="tab-pane" id="messages">Message</div>
         <div role="tabpanel" class="tab-pane" id="settings">Setting</div>
     </div>
 
+    <a href="<c:url value="FirstExampleAngular.jsp"/>">First Example</a>
 </div>
 
 <script type="text/javascript" src="<c:url value="/webjars/jquery/1.9.0/jquery.js"/>"></script>

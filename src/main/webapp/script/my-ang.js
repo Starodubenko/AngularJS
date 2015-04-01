@@ -1,60 +1,17 @@
-(function(){
-    var app = angular.module("mainModule", []);
+var app = angular.module("mainModule", []);
 
-    app.directive("carsTabs", function() {
-        return {
-            restrict: "E",
-            templateUrl: "product-tabs.html",
-            controller: function() {
-                this.tab = 1;
+app.controller("containerCtrl", function () {
+    this.name = "";
+    this.description = "";
+    this.photos = ["Photo_1", "Photo_2"];
 
-                this.isSet = function(checkTab) {
-                    return this.tab === checkTab;
-                };
+    this.addPhoto = function () {
+        this.photos.push(this.newPhoto);
+        this.newPhoto = "";
+    };
 
-                this.setTab = function(activeTab) {
-                    this.tab = activeTab;
-                };
-            },
-            controllerAs: "tab"
-        };
-    });
-
-    app.directive("container", function() {
-        return {
-            restrict: "E",
-            templateUrl: "product-tabs.html",
-            controller: function() {
-                this.tab = 1;
-
-                this.isSet = function(checkTab) {
-                    return this.tab === checkTab;
-                };
-
-                this.setTab = function(activeTab) {
-                    this.tab = activeTab;
-                };
-            },
-            controllerAs: "tab"
-        };
-    });
-
-    app.directive("ship", function() {
-        return {
-            restrict: "E",
-            templateUrl: "product-tabs.html",
-            controller: function() {
-                this.tab = 1;
-
-                this.isSet = function(checkTab) {
-                    return this.tab === checkTab;
-                };
-
-                this.setTab = function(activeTab) {
-                    this.tab = activeTab;
-                };
-            },
-            controllerAs: "tab"
-        };
-    });
+    this.removePhoto = function (name) {
+        var i = this.photos.indexOf(name);
+        this.photos.splice(i,1);
+    };
 });
