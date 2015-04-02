@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<link rel='stylesheet' href="/style/authentication.css">
+
+<form class="location">
+<select class="form-control language" id="switchLanguage" onchange="submit()" name="locale">
+    <option class="language-icon" value="ru">rus</option>
+    <option class="language-icon" value="en">eng</option>
+</select>
+</form>
+
+<div id="autorized" class="panel panel-default">
+    <label class="welcome-label">${user.getRole().getPositionName()}: </label>
+    <label class="name-label">${user.getFirstName()}</label>
+    <label class="name-label">${user.getLastName()}</label>
+    <a href="/do/logout">[logout]</a>
+    <div class="clear"></div>
+</div>
+
+<div id="unAutorized" class="panel panel-default">
+    <form id="loginform" method="post">
+        <a href="/do/registration">Registration</a>
+
+        <div class="field-block">
+            <label class="login-label" for="inputLogin" style="margin-left: 5px">Login</label>
+            <input type="text" name="authenticationLogin" class="login-fields form-control" id="inputLogin" value="">
+        </div>
+        <div class="field-block">
+            <label class="login-label" for="inputPassword">Password</label>
+            <input type="password" name="authenticationPassword" class="login-fields form-control" id="inputPassword" value="">
+        </div>
+
+        <input type="button" class="loginbtn btn-cust" value="Log in/>"
+        id="goLogin">
+        <br/>
+
+        <p class="log-in-error" id="errorLogin"></p>
+    </form>
+    <div class="clear"></div>
+</div>

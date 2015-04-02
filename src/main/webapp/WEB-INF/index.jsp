@@ -49,12 +49,17 @@
         <div role="tabpanel" class="tab-pane" id="settings">Setting</div>
     </div>
 
-    <a href="<c:url value="FirstExampleAngular.jsp"/>">First Example</a>
+    <div ng-view></div>
+
+    <a href="<c:url value="../FirstExampleAngular.jsp"/>">First Example</a>
 </div>
+
+
 
 <script type="text/javascript" src="<c:url value="/webjars/jquery/1.9.0/jquery.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/webjars/bootstrap/3.0.0/js/bootstrap.min.js"/>"></script>
 <script type="text/javascript" src="<c:url value="webjars/angularjs/1.3.15/angular.js"/>"></script>
+<script type="text/javascript" src="<c:url value="webjars/angularjs/1.3.15/angular-route.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/script/my-ang.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/script/index.js"/>"></script>
 </body>

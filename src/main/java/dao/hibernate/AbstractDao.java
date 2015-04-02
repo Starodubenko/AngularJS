@@ -1,9 +1,6 @@
 package dao.hibernate;
 
-import dao.DaoException;
 import entity.BaseEntity;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
@@ -28,10 +25,12 @@ public abstract class AbstractDao<T extends BaseEntity> {
         em.persist(entity);
     }
 
+    @Transactional
     public void update(T entity) {
         em.merge(entity);
     }
 
+    @Transactional
     public void delete(T entity) {
         em.remove(entity);
     }
