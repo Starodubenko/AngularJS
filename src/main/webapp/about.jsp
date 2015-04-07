@@ -13,9 +13,15 @@ Load description: {{description}}
 </ul>
 
 <span>Images</span>
-Search: <input type="text" ng-model="query">
+<%--Search: <input type="text" ng-model="query">--%>
+Search: <input type="text" ng-model="name" ng-keydown="jsonFilter()">
 
-<div ng-repeat="car in cars | filter:query">
+<div ng-repeat="car in cars">
     <span>{{car.name}}</span>
     <img ng-src="{{car.image}}"/>
 </div>
+
+<%--<div ng-repeat="car in cars | filter:query">--%>
+    <%--<span>{{car.name}}</span>--%>
+    <%--<img ng-src="{{car.image}}"/>--%>
+<%--</div>--%>
