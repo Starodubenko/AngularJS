@@ -1,5 +1,5 @@
 //(function () {
-var app = angular.module("mainModule", ['ngRoute']);
+var app = angular.module("mainModule", ['ngRoute','dialogDemo1']);
 
 app.controller("containerCtrl", function ($scope, $http) {
     $scope.name = "";
