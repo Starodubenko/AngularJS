@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html ng-app="dialogDemo1">
+<html ng-app="mainModule">
 <head>
     <link type="text/css" rel="stylesheet" href="<c:url value="webjars/bootstrap/3.0.0/css/bootstrap.css"/>"/>
     <link type="text/css" rel="stylesheet" href="<c:url value="../style/welcome.css"/>"/>
@@ -19,17 +19,9 @@
             <li id="news"><a href="#/News">News</a></li>
             <li id="about"><a href="#/About">About</a></li>
             <li id="services"><a href="#/Services">Services</a></li>
+            <li id="log in"><a href="#/Log-in">Log in</a></li>
         </ul>
     </nav>
-
-    <div ng-controller="AppCtrl" class="full" layout="column" layout-margin>
-        <div layout="column" layout-align="center" >
-            <md-button class="md-primary" ng-click="showConfirm($event)">
-                Confirm Dialog
-            </md-button>
-            <%--DOTO Исправить контороллер на my-ang !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!--%>
-        </div>
-    </div>
 </div>
 
 <h2 style="{margin: auto}">TEST ANGULAR</h2>
@@ -45,7 +37,7 @@
 <script type="text/javascript" src="<c:url value="/script/index.js"/>"></script>
 
 <!-- Angular Material Dependencies -->
-<script type="text/javascript" src="<c:url value="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"/>"></script>
+<%--<script type="text/javascript" src="<c:url value="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"/>"></script>--%>
 <script type="text/javascript" src="<c:url value="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"/>"></script>
 <script type="text/javascript" src="<c:url value="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"/>"></script>
 <!-- Angular Material Javascript now available via Google CDN; version 0.8 used here -->

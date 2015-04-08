@@ -15,7 +15,7 @@ import java.util.List;
 public abstract class AbstractDao<T extends BaseEntity> {
 
     @Inject
-    private EntityManager em;
+    protected EntityManager em;
 
     protected AbstractDao() {
     }

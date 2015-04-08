@@ -1,5 +1,5 @@
 //(function () {
-var app = angular.module("mainModule", ['ngRoute','dialogDemo1']);
+var app = angular.module("mainModule", ['ngRoute', 'dialogDemo1']);
 
 app.controller("containerCtrl", function ($scope, $http) {
     $scope.name = "";
@@ -47,6 +47,10 @@ app.config(function ($routeProvider) {
             templateUrl: 'services.jsp',
             controller: 'TabController'
         }).
+        when('/Log-in', {
+            templateUrl: 'log-in.jsp',
+            controller: 'LoginController'
+        }).
         otherwise({
             redirectTo: '/'
         })
@@ -61,6 +65,15 @@ app.controller("TabController", function ($scope) {
 
     $scope.isSelected = function (check) {
         return $scope.current === check;
+    };
+});
+
+app.controller("LoginController", function ($scope) {
+    $scope.login = '';
+    $scope.password = '';
+
+    $scope.logIn = function () {
+
     };
 });
 

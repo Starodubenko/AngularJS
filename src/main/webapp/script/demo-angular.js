@@ -19,11 +19,11 @@ angular.module('dialogDemo1', ['ngMaterial'])
             // Appending dialog to document.body to cover sidenav in docs app
             var confirm = $mdDialog.confirm()
                 .parent(angular.element(document.body))
-                .title('Would you like to delete your debt?')
-                .content('All of the banks have agreed to forgive you your debts.')
+                .title('Log in')
+                .content('log-in.jsp')
                 .ariaLabel('Lucky day')
-                .ok('Please do it!')
-                .cancel('Sounds like a scam')
+                .ok('ok')
+                .cancel('cancel')
                 .targetEvent(ev);
             $mdDialog.show(confirm).then(function() {
                 $scope.alert = 'You decided to get rid of your debt.';
@@ -34,7 +34,7 @@ angular.module('dialogDemo1', ['ngMaterial'])
         $scope.showAdvanced = function(ev) {
             $mdDialog.show({
                 controller: DialogController,
-                templateUrl: 'dialog1.tmpl.html',
+                templateUrl: 'log-in.jsp',
                 targetEvent: ev
             })
                 .then(function(answer) {
