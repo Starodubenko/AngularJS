@@ -1,9 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html ng-app="mainModule">
+<html ng-app="App">
 <head>
     <link type="text/css" rel="stylesheet" href="<c:url value="webjars/bootstrap/3.0.0/css/bootstrap.css"/>"/>
-    <link type="text/css" rel="stylesheet" href="<c:url value="../style/welcome.css"/>"/>
+    <%--<link type="text/css" rel="stylesheet" href="<c:url value="../style/welcome.css"/>"/>--%>
 
     <link rel='stylesheet' href='<c:url value="/style/navigation.css"/>'>
     <link rel="stylesheet" href="<c:url value="http://fonts.googleapis.com/css?family=Lobster"/>"/>
@@ -33,8 +33,12 @@
 <script type="text/javascript" src="<c:url value="/webjars/angularjs/1.3.15/angular.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/webjars/angularjs/1.3.15/angular-route.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/script/demo-angular.js"/>"></script>
-<script type="text/javascript" src="<c:url value="/script/my-ang.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/script/index.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/script/app.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/script/controller/nav-ctrl.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/script/controller/login-ctrl.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/script/controller/tab-ctrl.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/script/controller/container-ctrl.js"/>"></script>
 
 <!-- Angular Material Dependencies -->
 <%--<script type="text/javascript" src="<c:url value="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"/>"></script>--%>

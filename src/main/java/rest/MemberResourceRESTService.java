@@ -17,7 +17,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.*;
 
-@Path("/members")
+@Path("/users")
 @RequestScoped
 public class MemberResourceRESTService {
 
@@ -58,12 +58,9 @@ public class MemberResourceRESTService {
         Response.ResponseBuilder builder = null;
 
         try {
-            // Validates member using bean validation
             validateMember(member);
 
             userService.signUp(member);
-
-            // Create an "ok" response
             builder = Response.ok();
         } catch (ConstraintViolationException ce) {
             // Handle bean validation issues
