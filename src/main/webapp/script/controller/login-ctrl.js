@@ -4,15 +4,15 @@
     angular.module("App").
         controller("LoginController", LoginController);
 
-    function LoginController($scope, $http, users) {
+    function LoginController($scope, $http, store, users) {
         $scope.user = {};
         $scope.logined = false;
 
         $scope.singIn = function () {
             $http.post('http://localhost:8080/angular/app/users', $scope.user).
-                success(function(user) {
+                success(function(data) {
                     $scope.logined = true;
-                    alert("Login was successful!"+user.name +" "+ user.surname + " logined !");
+                    store.set('jwt', data.jwt);
                 }).
                 error(function(data) {
                     alert("Login was fail!");
@@ -21,6 +21,7 @@
         };
 
         $scope.logOut = function () {
+            store.remove('jwt');
             $scope.logined = false;
         };
     }

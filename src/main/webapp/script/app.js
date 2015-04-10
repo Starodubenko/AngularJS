@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module("App", ['ngRoute', 'dialogDemo1', 'userServices']);
+    angular.module("App", ['ngRoute', 'dialogDemo1', 'userServices', 'angular-storage']);
 
     angular.module("App")
         .config(function ($routeProvider) {

@@ -51,5 +51,6 @@
 <script type="text/javascript" src="<c:url value="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.js"/>"></script>
 <script type="text/javascript" src="<c:url value="https://rawgit.com/angular/bower-material/master/angular-material.js"/>"></script>
 <script type="text/javascript" src="<c:url value="https://cdn.rawgit.com/auth0/angular-jwt/master/dist/angular-jwt.js"/>"></script>
+<script type="text/javascript" src="<c:url value="https://cdn.rawgit.com/auth0/angular-storage/master/dist/angular-storage.js"/>"></script>
 </body>
 </html>
