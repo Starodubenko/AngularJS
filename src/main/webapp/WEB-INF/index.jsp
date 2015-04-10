@@ -32,13 +32,16 @@
 <script type="text/javascript" src="<c:url value="/webjars/bootstrap/3.0.0/js/bootstrap.min.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/webjars/angularjs/1.3.15/angular.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/webjars/angularjs/1.3.15/angular-route.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/webjars/angularjs/1.3.15/angular-resource.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/script/demo-angular.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/script/services/services.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/script/index.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/script/app.js"/>"></script>
-<script type="text/javascript" src="<c:url value="/script/controller/nav-ctrl.js"/>"></script>
-<script type="text/javascript" src="<c:url value="/script/controller/login-ctrl.js"/>"></script>
-<script type="text/javascript" src="<c:url value="/script/controller/tab-ctrl.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/script/controller/container-ctrl.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/script/controller/login-ctrl.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/script/controller/nav-ctrl.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/script/controller/tab-ctrl.js"/>"></script>
+
 
 <!-- Angular Material Dependencies -->
 <%--<script type="text/javascript" src="<c:url value="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"/>"></script>--%>
@@ -47,5 +50,6 @@
 <!-- Angular Material Javascript now available via Google CDN; version 0.8 used here -->
 <script type="text/javascript" src="<c:url value="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.js"/>"></script>
 <script type="text/javascript" src="<c:url value="https://rawgit.com/angular/bower-material/master/angular-material.js"/>"></script>
+<script type="text/javascript" src="<c:url value="https://cdn.rawgit.com/auth0/angular-jwt/master/dist/angular-jwt.js"/>"></script>
 </body>
 </html>

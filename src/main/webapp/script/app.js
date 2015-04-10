@@ -1,7 +1,7 @@
-//(function () {
-//    'use strict';
+(function () {
+    'use strict';
 
-    angular.module("App", ['ngRoute', 'dialogDemo1']);
+    angular.module("App", ['ngRoute', 'dialogDemo1', 'userServices']);
 
     angular.module("App")
         .config(function ($routeProvider) {
@@ -15,7 +15,7 @@
                     controller: 'ContainerController'
                 }).
                 when('/Log-in', {
-                    templateUrl: 'about.jsp',
+                    templateUrl: 'log-in.jsp',
                     controller: 'LoginController'
                 }).
                 when('/Services', {
@@ -26,5 +26,11 @@
                     redirectTo: '/'
                 })
         });
-//});
+
+    //document.write('<script type="text/javascript" src="script/controller/container-ctrl.js"></script>');
+    //document.write('<script type="text/javascript" src="script/controller/login-ctrl.js"></script>');
+    //document.write('<script type="text/javascript" src="script/controller/nav-ctrl.js"></script>');
+    //document.write('<script type="text/javascript" src="script/controller/tab-ctrl.js"></script>');
+    //document.write('<script type="text/javascript" src="script/services/services.js"></script>');
+})();
 

@@ -1,5 +1,5 @@
-//(function () {
-//    'use strict';
+(function () {
+    'use strict';
 
     angular.module("App").
         controller("ContainerController", ContainerController);
@@ -35,4 +35,4 @@
             $scope.photos.splice(i, 1);
         };
     }
-//});
+})();

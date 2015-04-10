@@ -16,8 +16,16 @@ public class UserDaoImpl extends AbstractDao<User> implements UserDao {
 
     @Override
     public boolean alreadyExist(String login) {
-        TypedQuery<User> query = em.createQuery("", User.class);
+        TypedQuery<User> query = em.createQuery("select u from User u where lower(u.login) = "+"lower("+login+")", User.class);
         User user = query.getSingleResult();
         return user != null;
+    }
+
+    @Override
+    public User findByCredentials(String login, String password) {
+        TypedQuery<User> query = em.createQuery("select u from User u where lower(u.login) = " +
+                "lower('" + login + "') and u.password = '" + password + "'", User.class);
+        User user = query.getSingleResult();
+        return user;
     }
 }

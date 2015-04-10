@@ -1,5 +1,5 @@
-//(function () {
-//    'use strict';
+(function () {
+    'use strict';
 
     angular.module("App").
         controller("TabController", TabController);
@@ -15,4 +15,4 @@
             return $scope.current === check;
         };
     }
-//});
+})();
