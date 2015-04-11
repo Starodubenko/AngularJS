@@ -1,36 +1,54 @@
 (function () {
     'use strict';
 
-    angular.module("App", ['ngRoute', 'dialogDemo1', 'userServices', 'angular-storage']);
+    angular.module("App", ['ngRoute', 'dialogDemo1', 'userServices', 'angular-storage', 'angular-jwt','ui.router']);
 
     angular.module("App")
-        .config(function ($routeProvider) {
-            $routeProvider.
-                when('/News', {
-                    templateUrl: 'news.jsp'
-                    //controller: 'CountryListCtrl'
-                }).
-                when('/About', {
-                    templateUrl: 'about.jsp',
-                    controller: 'ContainerController'
-                }).
-                when('/Log-in', {
-                    templateUrl: 'log-in.jsp',
-                    controller: 'LoginController'
-                }).
-                when('/Services', {
-                    templateUrl: 'services.jsp',
-                    controller: 'TabController'
-                }).
-                otherwise({
-                    redirectTo: '/'
-                })
-        });
+        .config(appCconfig)
+        .run(appRun);
 
-    //document.write('<script type="text/javascript" src="script/controller/container-ctrl.js"></script>');
-    //document.write('<script type="text/javascript" src="script/controller/login-ctrl.js"></script>');
-    //document.write('<script type="text/javascript" src="script/controller/nav-ctrl.js"></script>');
-    //document.write('<script type="text/javascript" src="script/controller/tab-ctrl.js"></script>');
-    //document.write('<script type="text/javascript" src="script/services/services.js"></script>');
+    function appCconfig($routeProvider, jwtInterceptorProvider, $httpProvider, $stateProvider) {
+        $stateProvider
+            .state('news',{
+                url:'/News',
+                templateUrl:'news.jsp',
+                controller: 'ContainerController',
+                data:{
+                    requiresLogin:true
+                }
+            })
+            .state('about',{
+                url:'/About',
+                templateUrl: 'about.jsp',
+                controller: 'ContainerController'
+            })
+            .state('log-in',{
+                url:'/Log-in',
+                templateUrl: 'log-in.jsp',
+                controller: 'LoginController'
+            })
+            .state('services',{
+                url:'/Services',
+                templateUrl: 'services.jsp',
+                controller: 'TabController'
+            });
+
+        //jwtInterceptorProvider.tokenGetter = function (store) {
+        //    return store.get('jwt');
+        //};
+        //
+        //$httpProvider.interceptors.push('jwtInterceptor');
+    }
+
+    function appRun($state,store,$rootScope){
+        $rootScope.$on('$stateChangeStart',function(e,to){
+            if(to.data && to.data.requiresLogin){
+                if(!store.get('jwt')){
+                    e.preventDefault();
+                    $state.go('log-in');
+                }
+            }
+        })
+    }
 })();
 

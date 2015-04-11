@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<form style="{margin:auto;}">
+<form>
     <label>Login</label>
     <input type="text">
     <label>Password</label>

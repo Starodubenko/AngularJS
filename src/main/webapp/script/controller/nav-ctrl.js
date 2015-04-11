@@ -4,15 +4,17 @@
     angular.module("App").
         controller("NavigationController", NavController);
 
-    function NavController($scope) {
-        $scope.current = "news";
+    function NavController($scope, $state) {
+        var ctrl = this;
+        ctrl.current = "";
 
-        $scope.selectNav = function (newCurrent) {
-            $scope.current = newCurrent;
+        ctrl.selectNav = function (newCurrent) {
+            ctrl.current = newCurrent;
+            $state.go(ctrl.current);
         };
 
-        $scope.isSelected = function (check) {
-            return $scope.current === check;
+        ctrl.isSelected = function (check) {
+            return ctrl.current === check;
         };
     }
 })();

@@ -9,7 +9,7 @@
         $scope.logined = false;
 
         $scope.singIn = function () {
-            $http.post('http://localhost:8080/angular/app/users', $scope.user).
+            $http.post('http://localhost:18080/angular/app/users', $scope.user).
                 success(function(data) {
                     $scope.logined = true;
                     store.set('jwt', data.jwt);

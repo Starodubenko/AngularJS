@@ -12,7 +12,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SignatureException;
 import java.util.regex.Pattern;
 
-@WebFilter(filterName = "authorizationFilter")
+@WebFilter("/welcome")
 public class authorizationFilter implements Filter {
     public void destroy() {
     }

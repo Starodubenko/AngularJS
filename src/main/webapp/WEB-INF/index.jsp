@@ -13,26 +13,27 @@
 </head>
 
 <body>
-<div class="background-navigation">
+<div class="background-navigation" ng-controller="NavigationController as navigation">
     <nav class="center">
         <ul class="fancyNav">
-            <li id="news"><a href="#/News">News</a></li>
-            <li id="about"><a href="#/About">About</a></li>
-            <li id="services"><a href="#/Services">Services</a></li>
-            <li id="log in"><a href="#/Log-in">Log in</a></li>
+            <li><a href="" ng-click="navigation.selectNav('news')">News</a></li>
+            <li><a href="" ng-click="navigation.selectNav('about')">About</a></li>
+            <li><a href="" ng-click="navigation.selectNav('services')">Services</a></li>
+            <li><a href="" ng-click="navigation.selectNav('log-in')">Log in</a></li>
         </ul>
     </nav>
 </div>
 
 <h2 style="{margin: auto}">TEST ANGULAR</h2>
 
-<div ng-view></div>
+<div ui-view></div>
 
 <script type="text/javascript" src="<c:url value="/webjars/jquery/1.9.0/jquery.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/webjars/bootstrap/3.0.0/js/bootstrap.min.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/webjars/angularjs/1.3.15/angular.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/webjars/angularjs/1.3.15/angular-route.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/webjars/angularjs/1.3.15/angular-resource.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/webjars/angular-ui-router/0.2.13/angular-ui-router.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/script/demo-angular.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/script/services/services.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/script/index.js"/>"></script>
