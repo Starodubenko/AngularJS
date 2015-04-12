@@ -80,6 +80,12 @@
 
         <dependency>
             <groupId>org.webjars</groupId>
+            <artifactId>angular-jwt</artifactId>
+            <version>0.0.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.webjars</groupId>
             <artifactId>angular-ui-router</artifactId>
             <version>0.2.13</version>
         </dependency>

@@ -10,9 +10,10 @@ import java.io.IOException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.SignatureException;
+import java.util.Enumeration;
 import java.util.regex.Pattern;
 
-@WebFilter("/welcome")
+@WebFilter("/app/*")
 public class authorizationFilter implements Filter {
     public void destroy() {
     }
@@ -30,6 +31,7 @@ public class authorizationFilter implements Filter {
 
     private String getToken(HttpServletRequest httpRequest) throws ServletException {
         String token = null;
+        Enumeration<String> headerNames = httpRequest.getHeaderNames();
         final String authorizationHeader = httpRequest.getHeader("authorization");
         if (authorizationHeader == null) {
             throw new ServletException("Unauthorized: No Authorization header was found");

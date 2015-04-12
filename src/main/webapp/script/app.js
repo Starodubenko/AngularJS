@@ -7,7 +7,7 @@
         .config(appCconfig)
         .run(appRun);
 
-    function appCconfig($routeProvider, jwtInterceptorProvider, $httpProvider, $stateProvider) {
+    function appCconfig($urlRouterProvider, jwtInterceptorProvider, $httpProvider, $stateProvider) {
         $stateProvider
             .state('news',{
                 url:'/News',
@@ -31,16 +31,23 @@
                 url:'/Services',
                 templateUrl: 'services.jsp',
                 controller: 'TabController'
+            })
+            .state('do-login',{
+                url:'/Services',
+                templateUrl: 'services.jsp',
+                controller: 'TabController'
             });
+        //$urlRouterProvider.otherwise('/');
 
-        //jwtInterceptorProvider.tokenGetter = function (store) {
-        //    return store.get('jwt');
-        //};
-        //
-        //$httpProvider.interceptors.push('jwtInterceptor');
+        jwtInterceptorProvider.tokenGetter = function (store) {
+            return store.get('jwt');
+        };
+
+        $httpProvider.interceptors.push('jwtInterceptor');
     }
-
+//todo create DTOObjects, do not add the header of authorization in simple request.
     function appRun($state,store,$rootScope){
+        alert("werwer");
         $rootScope.$on('$stateChangeStart',function(e,to){
             if(to.data && to.data.requiresLogin){
                 if(!store.get('jwt')){

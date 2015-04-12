@@ -40,7 +40,7 @@ public class MemberResourceRESTService {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<User> listAllMembers() {
+    public List<User> listAllMembers(@HeaderParam("authorization") final String token) {
         return userDao.findAll();
     }
 
