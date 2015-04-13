@@ -124,3 +124,17 @@
 .fancyNav {
     margin: 0;
 }
+
+.authentication{
+    float: right;
+    margin: 5px;
+}
+
+.authentication a, label{
+    float: right;
+    margin: 5px;
+}
+
+/*.authentication #sing-in{*/
+
+/*}*/

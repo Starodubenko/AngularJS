@@ -22,7 +22,7 @@
                 templateUrl: 'about.jsp',
                 controller: 'ContainerController'
             })
-            .state('log-in',{
+            .state('sign-in',{
                 url:'/log-in',
                 templateUrl: 'log-in.jsp',
                 controller: 'LoginController'
@@ -32,7 +32,7 @@
                 templateUrl: 'services.jsp',
                 controller: 'TabController'
             })
-            .state('reg',{
+            .state('sign-up',{
                 url:'/registration',
                 templateUrl: 'registration.html',
                 controller: 'RegController',

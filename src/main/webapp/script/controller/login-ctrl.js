@@ -22,17 +22,5 @@
                 });
 
         };
-
-        ctrl.isLoggedIn = function(){
-            return !store.get('jwt');
-        };
-
-        ctrl.logOut = function () {
-            store.remove('jwt');
-        };
-
-        ctrl.goToRegistration = function () {
-            $state.go("reg");
-        }
     }
 })();

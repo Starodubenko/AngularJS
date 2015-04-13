@@ -4,9 +4,10 @@
     angular.module("App").
         controller("NavigationController", NavController);
 
-    function NavController($scope, $state) {
+    function NavController($scope, $state, store, jwtHelper) {
         var ctrl = this;
         ctrl.current = "";
+        ctrl.user = {name: "Qwe", surname: "Ewq"};
 
         ctrl.selectNav = function (newCurrent) {
             ctrl.current = newCurrent;
@@ -17,13 +18,26 @@
             return ctrl.current === check;
         };
 
-        ctrl.ddSelectOptions = [
-            {
-                text: 'Option1',
-                value: 'a value'
-            }
-        ];
+        ctrl.toSingUp = function(){
+          $state.go("sign-up");
+        };
 
-        $scope.ddSelectSelected = {}; // Must be an object
+        ctrl.toSingIn = function(){
+            $state.go("sign-in");
+        };
+
+        ctrl.singOut = function(){
+            store.remove('jwt');
+        };
+
+        ctrl.isLogged = function(){
+            return !store.get('jwt');
+        };
+
+        ctrl.getUserNameSurname = function(){
+            var token = store.get('jwt');
+            var decode = jwtHelper.decodeToken(token);
+            return decode.name + " " + decode.surname;
+        }
     }
 })();
