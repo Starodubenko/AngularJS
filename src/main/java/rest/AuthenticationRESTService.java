@@ -24,7 +24,7 @@ import java.util.Map;
 
 @Path("/users")
 @RequestScoped
-public class MemberResourceRESTService {
+public class AuthenticationRESTService {
 
     @Inject
     private Logger log;
@@ -56,6 +56,7 @@ public class MemberResourceRESTService {
     }
 
     @POST
+    @Path("/log-in")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Map<String, String> findUser(User user) {
@@ -67,6 +68,24 @@ public class MemberResourceRESTService {
         Map<String, String> map = new HashMap<>();
         map.put("jwt", sign);
         return map;
+    }
+
+    @POST
+    @Path("/reg")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response registration(User user) {
+
+        userDao.insert(user);
+
+//        User foundUser = userDao.findByCredentials(user.getLogin(), user.getPassword());
+//
+//        JWTSigner jwtSigner = new JWTSigner("mr.Star");
+//        String sign = jwtSigner.sign(getEntityFields(foundUser));
+//
+//        Map<String, String> map = new HashMap<>();
+//        map.put("jwt", sign);
+        return null;
     }
 
 

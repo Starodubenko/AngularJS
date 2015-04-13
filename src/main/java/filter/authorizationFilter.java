@@ -13,7 +13,8 @@ import java.security.SignatureException;
 import java.util.Enumeration;
 import java.util.regex.Pattern;
 
-@WebFilter("/app/*")
+//@WebFilter("/#/guarded/*")
+//@WebFilter("/app/users/*")
 public class authorizationFilter implements Filter {
     public void destroy() {
     }

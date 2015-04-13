@@ -1,0 +1,22 @@
+<div class="authentication" ng-controller="RegController as reg">
+    <md-content md-theme="docs-dark" class="md-padding" layout="row" layout-sm="column">
+        <md-input-container>
+            <label>Login</label>
+            <input ng-model="reg.user.login">
+        </md-input-container>
+    </md-content>
+    <md-content md-theme="docs-dark" class="md-padding" layout="row" layout-sm="column">
+        <md-input-container>
+            <label>Password</label>
+            <input ng-model="reg.user.password">
+        </md-input-container>
+    </md-content>
+    <md-content md-theme="docs-dark" class="md-padding" layout="row" layout-sm="column">
+        <md-input-container>
+            <label>E-mail</label>
+            <input ng-model="reg.user.email">
+        </md-input-container>
+    </md-content>
+
+    <md-button class="md-raised md-primary" ng-click="reg.singUp()">Sin up</md-button>
+</div>

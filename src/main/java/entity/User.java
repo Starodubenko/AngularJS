@@ -15,10 +15,18 @@ public class User extends BaseEntity {
     private String login;
     @Column
     private String password;
-
-
+    @Column
+    private String email;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Ship> ships = new ArrayList<Ship>();
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public List<Ship> getShips() {
         return ships;

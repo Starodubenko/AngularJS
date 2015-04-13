@@ -1,20 +1,20 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 
-<div style="{background-color: white; width: 300px;}" ng-controller="LoginController as logIn">
-  <md-content md-theme="docs-dark" class="md-padding" layout="row" layout-sm="column">
+<div class="authentication" ng-controller="LoginController as logIn">
+  <md-content md-theme="docs-dark" class="md-padding" layout="row" layout-sm="column" ng-show="logIn.isLoggedIn()">
     <md-input-container>
       <label>Login</label>
-      <input ng-model="user.login">
+      <input ng-model="logIn.user.login">
     </md-input-container>
     <md-input-container>
       <label>Password</label>
-      <input ng-model="user.password">
+      <input ng-model="logIn.user.password">
     </md-input-container>
   </md-content>
 
-  <md-button class="md-raised md-primary" ng-show="!logined" ng-click="singIn()">Sin in</md-button>
-  <md-button class="md-raised md-primary" ng-show="logined" ng-click="logOut()">Log out</md-button>
+  <md-button class="md-raised md-primary" ng-show="logIn.isLoggedIn()" ng-click="logIn.singIn()">Sin in</md-button>
+  <md-button class="md-raised md-primary" ng-show="!logIn.isLoggedIn()" ng-click="logIn.logOut()">Log out</md-button>
 
-  <h2 ng-bind-template="{{user.login}} {{user.password}}"></h2>
+  <a href="" ng-click="logIn.goToRegistration()">Registration</a>
 </div>

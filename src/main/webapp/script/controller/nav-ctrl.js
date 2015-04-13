@@ -16,5 +16,14 @@
         ctrl.isSelected = function (check) {
             return ctrl.current === check;
         };
+
+        ctrl.ddSelectOptions = [
+            {
+                text: 'Option1',
+                value: 'a value'
+            }
+        ];
+
+        $scope.ddSelectSelected = {}; // Must be an object
     }
 })();

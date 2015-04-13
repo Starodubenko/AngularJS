@@ -14,6 +14,6 @@ public class WelcomeServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("WEB-INF/index.jsp").forward(request,response);
+        request.getRequestDispatcher("WEB-INF/index.html").forward(request,response);
     }
 }
