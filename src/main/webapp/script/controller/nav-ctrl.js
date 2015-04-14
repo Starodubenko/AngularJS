@@ -7,7 +7,6 @@
     function NavController($scope, $state, store, jwtHelper) {
         var ctrl = this;
         ctrl.current = "";
-        ctrl.user = {name: "Qwe", surname: "Ewq"};
 
         ctrl.selectNav = function (newCurrent) {
             ctrl.current = newCurrent;
@@ -28,6 +27,7 @@
 
         ctrl.singOut = function(){
             store.remove('jwt');
+            $state.go("home");
         };
 
         ctrl.isLogged = function(){
@@ -36,8 +36,10 @@
 
         ctrl.getUserNameSurname = function(){
             var token = store.get('jwt');
-            var decode = jwtHelper.decodeToken(token);
-            return decode.name + " " + decode.surname;
+            if (token){
+                var decode = jwtHelper.decodeToken(token);
+                return decode.name + " " + decode.surname;
+            } else return "";
         }
     }
 })();

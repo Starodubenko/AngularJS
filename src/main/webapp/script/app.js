@@ -9,6 +9,10 @@
 
     function appConfig($urlRouterProvider, jwtInterceptorProvider, $httpProvider, $stateProvider) {
         $stateProvider
+            .state('home',{
+                url:'/',
+                template:''
+            })
             .state('news',{
                 url:'/news',
                 templateUrl:'news.jsp',
@@ -23,9 +27,10 @@
                 controller: 'ContainerController'
             })
             .state('sign-in',{
-                url:'/log-in',
+                url:'/sing-in',
                 templateUrl: 'log-in.jsp',
-                controller: 'LoginController'
+                controller: 'LoginController',
+                controllerAs: 'logIn'
             })
             .state('services',{
                 url:'/services',
@@ -33,7 +38,7 @@
                 controller: 'TabController'
             })
             .state('sign-up',{
-                url:'/registration',
+                url:'/sign-up',
                 templateUrl: 'registration.html',
                 controller: 'RegController',
                 controllerAs: 'reg'
@@ -53,7 +58,7 @@
                 if(!store.get('jwt')){
                     e.preventDefault();
                     navFactory.previousState = to.name;
-                    $state.go('log-in');
+                    $state.go('sign-in');
                 }
             }
         })

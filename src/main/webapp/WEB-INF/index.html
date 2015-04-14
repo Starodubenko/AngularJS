@@ -20,14 +20,21 @@
     </nav>
 
     <div class="authentication">
-        <a id="sing-in" href="" ng-show="navigation.isLogged()" ng-click="navigation.toSingIn()">Sign In</a>
-        <a id="sing-up" href="" ng-show="navigation.isLogged()" ng-click="navigation.toSingUp()">Sign Up</a>
-        <a id="sing-out" href="" ng-show="!navigation.isLogged()" ng-click="navigation.singOut()">Sign Out</a>
-        <label id="user-name-surname" ng-show="!navigation.isLogged()">User {{navigation.getUserNameSurname()}} |</label>
+        <md-button ng-show="navigation.isLogged()" ng-click="navigation.toSingUp()">Sign Up</md-button>
+        <md-button ng-show="navigation.isLogged()" ng-click="navigation.toSingIn()">Sign In</md-button>
+        <md-button ng-show="!navigation.isLogged()" ng-click="navigation.singOut()">Sign Out</md-button>
+        <md-button ng-href="" ng-show="!navigation.isLogged()">User {{navigation.getUserNameSurname()}}</md-button>
+        <!--<a id="sing-up" href="" ng-show="navigation.isLogged()" ng-click="navigation.toSingUp()">Sign Up</a>-->
+        <!--<a id="sing-in" href="" ng-show="navigation.isLogged()" ng-click="navigation.toSingIn()">Sign In</a>-->
+        <!--<a id="sing-out" href="" ng-show="!navigation.isLogged()" ng-click="navigation.singOut()">Sign Out</a>-->
+        <!--<label id="user-name-surname" ng-show="!navigation.isLogged()">User {{navigation.getUserNameSurname()}} |</label>-->
     </div>
 </div>
 
 <h2>TEST ANGULAR</h2>
+<div >
+
+</div>
 
 <div ui-view></div>
 

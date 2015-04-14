@@ -130,7 +130,7 @@
     margin: 5px;
 }
 
-.authentication a, label{
+.authentication .md-button, label{
     float: right;
     margin: 5px;
 }
