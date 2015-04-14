@@ -130,11 +130,10 @@
     margin: 5px;
 }
 
-.authentication .md-button, label{
+.authentication .md-button label{
     float: right;
     margin: 5px;
 }
-
-/*.authentication #sing-in{*/
-
-/*}*/
+.body{
+    /*background-image: url("../image/sea.jpg");*/
+}

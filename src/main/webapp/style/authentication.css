@@ -1,5 +1,22 @@
-.authentication-form{
+.auth-form{
     width: 300px;
     margin: auto;
-    background-color: #5d5d5d;
+    padding: 5px;
+    /*background-color: darkgray;*/
+}
+
+.auth-form md-input-container{
+    margin: 10px;
+}
+
+.auth-form button{
+    width: 200px;
+    margin-left: 40px;
+}
+
+.auth-form md-input-container{
+    padding-bottom: 10px;
+}
+.auth-form #form-title{
+    margin-left: 100px;
 }

@@ -1,4 +1,4 @@
-<div class="authentication-form" ng-controller="RegController as reg">
+<div class="auth-form" ng-controller="RegController as reg">
     <md-content md-theme="docs-dark" class="md-padding" layout="row" layout-sm="column">
         <md-input-container>
             <label>Login</label>
@@ -13,6 +13,12 @@
     </md-content>
     <md-content md-theme="docs-dark" class="md-padding" layout="row" layout-sm="column">
         <md-input-container>
+            <label>Confirm password</label>
+            <input ng-model="reg.user.passconfirm">
+        </md-input-container>
+    </md-content>
+    <md-content md-theme="docs-dark" class="md-padding" layout="row" layout-sm="column">
+        <md-input-container>
             <label>E-mail</label>
             <input ng-model="reg.user.email">
         </md-input-container>
@@ -20,3 +26,4 @@
 
     <md-button class="md-raised md-primary" ng-click="reg.singUp()">Sin up</md-button>
 </div>
+
