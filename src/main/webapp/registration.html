@@ -1,4 +1,4 @@
-<div class="auth-form" ng-controller="RegController as reg">
+<form name="signUpForm" class="auth-form" ng-controller="RegController as reg" novalidate>
     <md-content md-theme="docs-dark" class="md-padding" layout="row" layout-sm="column">
         <md-input-container>
             <label>Login</label>
@@ -25,5 +25,8 @@
     </md-content>
 
     <md-button class="md-raised md-primary" ng-click="reg.singUp()">Sin up</md-button>
-</div>
+
+    <input type="text" name="password" ng-model="textValue" password/>
+    <span ng-show="reg.showPassStrength('week')">Week password!!!</span>
+</form>
 

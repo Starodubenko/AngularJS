@@ -4,7 +4,7 @@
     angular.module("App").
         controller("RegController", RegistrationController);
 
-    function RegistrationController(store, users, $state, navFactory) {
+    function RegistrationController($rootScope,store, users, $state, navFactory) {
         var ctrl = this;
 
         ctrl.user = {};
@@ -21,5 +21,13 @@
                 });
 
         };
+
+        ctrl.showPassStrength = function(requireLevel){
+            return ctrl.lastTrueRegex.name === requireLevel;
+        };
+
+        $rootScope.$on("isLevel", function(event,lastTrueRegex){
+            ctrl.lastTrueRegex = lastTrueRegex;
+        })
     }
 })();

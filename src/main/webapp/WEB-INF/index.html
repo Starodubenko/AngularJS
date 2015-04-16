@@ -32,9 +32,9 @@
 
 <h2>TEST ANGULAR</h2>
 
-<form name="valForm">
+<form name="myForm">
     <input type="text" name="password" ng-model="textValue" password/>
-    <button ng-click="valForm.$error.clear()"></button>
+    <span ng-show="isLevel('week')">Week password!!!</span>
 </form>
 
 <div ui-view></div>

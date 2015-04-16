@@ -20,3 +20,26 @@
 .auth-form #form-title{
     margin-left: 100px;
 }
+
+.ng-valid-week{
+    border-color: red;
+}
+
+.ng-valid-pretty-week{
+    border-color: #ff7200;
+}
+
+.ng-valid-normal{
+    border-color: #ffb94f;
+}
+
+.ng-valid-pretty-strong{
+    border-color: #f7ff00;
+}
+
+.ng-valid-strong{
+    border-color: #baff46;
+}
+.ng-valid-very-strong{
+    border-color: #00ff04;
+}
